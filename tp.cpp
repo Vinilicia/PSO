@@ -1,11 +1,9 @@
 #include <iostream>
-#include <string>
 #include <fstream>
 #include <vector>
 #include <algorithm>
 #include <cstdlib>
 #include <cmath>
-#include <ctime>
 #include <random>
 
 #define MAX_ITER 500
@@ -145,14 +143,14 @@ vector<int> PSO(vector<Particula> particulas, vector<Cidade> cidades, double** m
             vector<Troca> trocas_finais;
             trocas_locais = calcula_trocas(particulas[i].melhor_caminho, particulas[i].caminho_atual);
             trocas_globais = calcula_trocas(melhor_global, particulas[i].caminho_atual);
-            for (int j = 0; j < trocas_locais.size(); j++){
+           for (int j = 0; j < trocas_locais.size(); j++){
                 if (dist(gen) < alpha){
-                    trocas_finais.push_back(trocas_locais[i]);
+                    trocas_finais.push_back(trocas_locais[j]);
                 }
             }
             for (int j = 0; j < trocas_globais.size(); j++){
                 if (dist(gen) < beta){
-                    trocas_finais.push_back(trocas_globais[i]);
+                    trocas_finais.push_back(trocas_globais[j]);
                 }
             }
             for (int j = 0; j < trocas_finais.size(); j++){
