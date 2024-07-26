@@ -1,3 +1,3 @@
 all:
-	g++ tp.cpp -o prog
+	g++ pso.cpp -o prog
 	./prog Input_TSP.txt
